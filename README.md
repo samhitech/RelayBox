@@ -27,7 +27,7 @@ Commands are preferably sent in one line e.g., 'ALEXONL405OFFL488OFFL520F1L638F2
 
 [microEye](https://github.com/samhitech/microEye) control module connects to the laser RelayBox and controls it alongside with the [MatchBox](https://integratedoptics.com/products/wavelength-combiners) combiner, for further details check the provided links.
 
-![control_module](https://user-images.githubusercontent.com/89871015/135933716-c1456b9d-7e30-4573-9c32-8c28db2187ae.png)
+![control_module](https://user-images.githubusercontent.com/89871015/141841883-d37c4979-c8aa-4e1f-b1b9-84bdd819c828.png)
 
 ## Authors
 
