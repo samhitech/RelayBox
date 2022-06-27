@@ -3,7 +3,7 @@ An Arduino that relays the flash signal of two [UI-3060CP Rev. 2](https://en.ids
 
 ## Circuit diagram 
 
-![circuit_dark](https://user-images.githubusercontent.com/89871015/135931417-3c83f831-b0a0-4b80-b9c6-8fe5e52b098b.png)
+![RelayBox](https://user-images.githubusercontent.com/89871015/175886793-4d19a346-352b-48da-ae14-5c24009df166.png)
 
 ## Commands for presets
 
