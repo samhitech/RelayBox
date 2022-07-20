@@ -1,5 +1,7 @@
 # RelayBox
-An Arduino that relays the flash signal of two [UI-3060CP Rev. 2](https://en.ids-imaging.com/store/products/cameras/ui-3060cp-rev-2.html) cameras to switch four lasers in the [MatchBox](https://integratedoptics.com/products/wavelength-combiners) combiner according to a specific preset.  
+An Arduino that handles laser triggering of a 4-wavelength laser diode combiner [IO MatchBox](https://integratedoptics.com/products/wavelength-combiners) according to a specific configuration sent via serial communication, and the GPIO signals of:
+- Dual [IDS UI-3060CP Rev. 2](https://en.ids-imaging.com/store/products/cameras/ui-3060cp-rev-2.html) CMOS cameras.
+- Other single CMOS cameras with TTL GPIOs that can be used as active during acquisition.
 
 ## Circuit diagram 
 
