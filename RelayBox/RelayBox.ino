@@ -39,9 +39,14 @@ void setup() {
   pinMode(L488pin, OUTPUT);
   pinMode(L520pin, OUTPUT);
   pinMode(L638pin, OUTPUT);
+  // Additional Laser
+  pinMode(L405pin + 4, OUTPUT);
+  pinMode(L488pin + 4, OUTPUT);
+  pinMode(L520pin + 4, OUTPUT);
+  pinMode(L638pin + 4, OUTPUT);
+  
   pinMode(FlashVCC_1, OUTPUT);
   pinMode(FlashVCC_2, OUTPUT);
-  pinMode(10, OUTPUT);
 
   attachInterrupt(digitalPinToInterrupt(FlashIn_1), blink, RISING);
   
@@ -53,6 +58,11 @@ void setup() {
 
 void blink() {
   ALEX_state = !ALEX_state;
+}
+
+void setLaser(int pin, int state) {
+  digitalWrite(pin, state);
+  digitalWrite(pin + 4, state);
 }
 
 void loop() {
@@ -118,80 +128,77 @@ void loop() {
 
   switch (L405_State) {
     case Off:
-      digitalWrite(L405pin, LOW);
+      setLaser(L405pin, LOW);
       break;
     case On:
-      digitalWrite(L405pin, HIGH);
+      setLaser(L405pin, HIGH);
       break;
     case FL1:
       if (!ALEX){
-        digitalWrite(L405pin, F1);
-      }else {digitalWrite(L405pin, F1 && ALEX_state);}
+        setLaser(L405pin, F1);
+      }else {setLaser(L405pin, F1 && ALEX_state);}
       break;
     case FL2:
       if (!ALEX){
         digitalWrite(L405pin, F2);
-      }else {digitalWrite(L405pin, F2 && !ALEX_state);}
+      }else {setLaser(L405pin, F2 && !ALEX_state);}
       break;
   }
 
   switch (L488_State) {
     case Off:
-      digitalWrite(L488pin, LOW);
+      setLaser(L488pin, LOW);
       break;
     case On:
-      digitalWrite(L488pin, HIGH);
+      setLaser(L488pin, HIGH);
       break;
     case FL1:
       if (!ALEX){
-        digitalWrite(L488pin, F1);
-      }else {digitalWrite(L488pin, F1 && ALEX_state);}
+        setLaser(L488pin, F1);
+      }else {setLaser(L488pin, F1 && ALEX_state);}
       break;
     case FL2:
       if (!ALEX){
-        digitalWrite(L488pin, F2);
-      }else {digitalWrite(L488pin, F2 && !ALEX_state);}
+        setLaser(L488pin, F2);
+      }else {setLaser(L488pin, F2 && !ALEX_state);}
       break;
   }
 
   switch (L520_State) {
     case Off:
-      digitalWrite(L520pin, LOW);
+      setLaser(L520pin, LOW);
       break;
     case On:
-      digitalWrite(L520pin, HIGH);
+      setLaser(L520pin, HIGH);
       break;
     case FL1:
       if (!ALEX) {
-        digitalWrite(L520pin, F1);
-      }else {digitalWrite(L520pin, F1 && ALEX_state);}
+        setLaser(L520pin, F1);
+      }else {setLaser(L520pin, F1 && ALEX_state);}
       break;
     case FL2:
       if (!ALEX) {
-        digitalWrite(L520pin, F2);
-      } else {digitalWrite(L520pin, F2 && !ALEX_state);}
+        setLaser(L520pin, F2);
+      } else {setLaser(L520pin, F2 && !ALEX_state);}
       break;
   }
 
   switch (L638_State) {
     case Off:
-      digitalWrite(L638pin, LOW);
+      setLaser(L638pin, LOW);
       break;
     case On:
-      digitalWrite(L638pin, HIGH);
+      setLaser(L638pin, HIGH);
       break;
     case FL1:
       if (!ALEX) {
-        digitalWrite(L638pin, F1);
-        } else {digitalWrite(L638pin, F1 && ALEX_state);}
+        setLaser(L638pin, F1);
+        } else {setLaser(L638pin, F1 && ALEX_state);}
       break;
     case FL2:
       if (!ALEX){
-        digitalWrite(L638pin, F2);
-      }else {digitalWrite(L638pin, F2 && !ALEX_state);}
+        setLaser(L638pin, F2);
+      }else {setLaser(L638pin, F2 && !ALEX_state);}
       break;
   }
-  
-  test = !test;
-  digitalWrite(10, test);
 }
