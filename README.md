@@ -5,6 +5,8 @@ An Arduino that handles laser triggering of a 4-wavelength laser diode combiner 
 
 ## Circuit diagram 
 
+- Pins 10, 11, 12, 13 are used for a second laser combiner in this branch. 
+
 ![RelayBox](https://user-images.githubusercontent.com/89871015/175890605-f487039c-ff59-407e-b97b-8c1afdb0190f.png)
 
 ## Commands for presets
